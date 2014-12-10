@@ -1,0 +1,59 @@
+<!doctype html>
+<html ng-app="myApp">
+	<head>
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.3/angular.js"></script>
+		<script src ="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.js"></script>
+		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+		<link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
+		<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.css">
+		<link rel="stylesheet" src="styles/myCss.css">
+		<script src="js/list.js"></script>
+		<script src="https://cdn.firebase.com/js/client/2.0.4/firebase.js"></script>
+		<script src="https://cdn.firebase.com/libs/angularfire/0.8.0/angularfire.min.js"></script>
+	</head>
+	<body>
+		<div ng-controller="AcountListCtrl as roster">
+			<ul class="list-group" id="accounts-list">
+
+<!-- beginning of ng-repeat for the list -->
+
+				<div ng-repeat="user in roster.list">
+					<li class="list-group-item">
+						<div class="container">
+							<div class="row">
+								<section class="card-body">
+									<div class="col-sm-3 ellipsis list list-bigger list-accounts-name">
+										<div class="profile-pic-small-container">
+										</div><a href="#">
+										{{user.name}}
+									</a>
+								</div>
+								<div class="col-sm-3 ellipsis list list-accounts-email hidden-xs">
+									<a href="#">
+										{{user.email_address}}
+									</a>
+									
+								</div>
+								<div class="btn-group" role="group" aria-label="...">
+									<button type="button" class="btn btn-default"><i class="fa fa-copy color-neutral"></i></button>
+									<button type="button" class="btn btn-default"><i class="fa fa-envelope-o color-neutral"></i></button>
+								</div>
+								<div class="col-sm-3 list list-controls-ie8 text-right">
+									<label >
+										<input type="checkbox" checked="" name="is_active" class="is_active landing-action-control">
+									</label>
+									Active
+								</div>
+								
+							</section>
+						</div>
+					</div>
+				</li>
+			</div>
+		</ul>
+
+<!-- end of ng-repeat for the list -->
+
+	</div>
+</body>
+</html>
